@@ -1,2 +1,2 @@
 # kadahye-stat.github.io
->인용구
+>인용구 수정
