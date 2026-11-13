@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f6f1">
+<meta name="description" content="가다혜의 데이터 분석 학습 기록과 관심 분야">
+<title>가다혜 — Data, in perspective</title>
+<style>
+:root{--paper:#f5f6f1;--ink:#202820;--muted:#687268;--green:#718b75;--pale:#e6ece3;--line:#dce2d9;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.65;letter-spacing:-.025em}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1080px,calc(100% - 48px));margin:auto}
+header{height:76px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-size:15px;font-weight:750;letter-spacing:-.04em}
+nav{display:flex;gap:26px;color:var(--muted);font-size:13px}
+nav a:hover{color:var(--green)}
+.eyebrow{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--green);font-weight:700}
+.hero{min-height:calc(100svh - 76px);display:flex;flex-direction:column;justify-content:center;padding:70px 0 110px;position:relative}
+.hero h1{font-size:clamp(48px,8.5vw,104px);line-height:1.08;letter-spacing:-.075em;font-weight:650;margin:24px 0;max-width:900px}
+.hero h1 span{color:var(--green)}
+.lead{font-size:clamp(17px,2vw,21px);color:var(--muted);max-width:580px;margin:0}
+.scroll-note{margin-top:74px;color:var(--muted);font-size:12px;display:flex;align-items:center;gap:12px}
+.scroll-note:before{content:"";height:1px;width:38px;background:var(--green)}
+section{padding:120px 0;border-top:1px solid var(--line)}
+.section-head{display:grid;grid-template-columns:1fr 1.5fr;gap:40px;margin-bottom:58px}
+h2{font-size:clamp(34px,5vw,60px);line-height:1.15;letter-spacing:-.065em;font-weight:620;margin:10px 0}
+.section-copy{font-size:17px;color:var(--muted);max-width:540px;align-self:end}
+.statement{font-size:clamp(28px,4.8vw,54px);line-height:1.35;letter-spacing:-.055em;max-width:900px;margin:0}
+.statement em{font-style:normal;color:var(--green)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:54px}
+.tile{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:28px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between}
+.tile .num{font-size:12px;color:var(--green);letter-spacing:.1em}
+.tile h3{font-size:23px;letter-spacing:-.05em;margin:24px 0 8px}
+.tile p{margin:0;color:var(--muted);font-size:14px}
+.method{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:50px}
+.method article{padding:26px 0;border-top:1px solid var(--line)}
+.method h3{font-size:20px;margin:0 0 8px}
+.method p{color:var(--muted);margin:0;font-size:14px;max-width:420px}
+.band{background:var(--pale);border-radius:28px;padding:clamp(28px,6vw,68px);margin-top:50px}
+.band p{font-size:clamp(24px,4vw,42px);line-height:1.4;letter-spacing:-.05em;margin:0;max-width:800px}
+.band small{display:block;color:var(--muted);margin-top:24px}
+.stack{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.pill{border:1px solid #cbd5c9;border-radius:99px;padding:9px 16px;color:#4e6251;font-size:13px;background:#f9faf7}
+footer{padding:60px 0 80px;border-top:1px solid var(--line)}
+footer .foot{display:flex;justify-content:space-between;align-items:end;gap:24px}
+footer h2{font-size:clamp(34px,6vw,68px);margin:12px 0}
+footer p{color:var(--muted);font-size:14px;margin:0}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.reveal.show{opacity:1;transform:none}
+@media(max-width:700px){
+ .wrap{width:min(100% - 36px,560px)}header{height:64px}nav{gap:14px;font-size:11px}
+ .hero{min-height:calc(88svh - 64px);padding:58px 0 80px}.hero h1{font-size:clamp(46px,13vw,72px)}
+ section{padding:82px 0}.section-head{grid-template-columns:1fr;gap:12px;margin-bottom:38px}.section-copy{font-size:15px}
+ .grid{grid-template-columns:1fr;gap:10px;margin-top:34px}.tile{min-height:170px;padding:24px}
+ .method{grid-template-columns:1fr;margin-top:30px}.band{border-radius:20px;margin-top:34px}
+ footer .foot{display:block}footer p{margin-top:16px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><a class="brand" href="#">DAHYE K.</a><nav><a href="#about">About</a><a href="#learning">Learning</a><a href="#approach">Approach</a></nav></header>
+<main>
+<section class="hero" style="border:0;padding-top:0">
+<div class="eyebrow">A six-month data journey · Python based</div>
+<h1>데이터를 읽고,<br><span>질문을 발견합니다.</span></h1>
+<p class="lead">안녕하세요. 데이터 분석가를 꿈꾸며 6개월간 다양한 분야의 데이터를 탐색하고 분석 방법을 익혀 온 가다혜입니다.</p>
+<div class="scroll-note">SCROLL TO EXPLORE</div>
+</section>
+<section id="about">
+<div class="section-head reveal"><div><div class="eyebrow">01 / About</div><h2>숫자 너머의<br>맥락을 봅니다.</h2></div><p class="section-copy">통계학을 바탕으로 데이터가 만들어진 배경과 그 안에 담긴 패턴을 함께 살펴봅니다. 분석 결과를 내는 데서 멈추지 않고, 이해하기 쉬운 언어로 전달하는 과정까지 중요하게 생각합니다.</p></div>
+<p class="statement reveal">좋은 분석은 복잡한 데이터를<br><em>명확한 질문과 근거 있는 해석</em>으로<br>바꾸는 일이라고 생각합니다.</p>
+</section>
+<section id="learning">
+<div class="section-head reveal"><div><div class="eyebrow">02 / Learning</div><h2>다양한 데이터,<br>다양한 시선.</h2></div><p class="section-copy">6개월의 부트캠프에서 Python을 중심으로 여러 분야의 데이터를 다루며, 데이터의 특성에 맞는 분석 흐름과 방법을 차근차근 익혔습니다.</p></div>
+<div class="grid">
+<article class="tile reveal"><span class="num">01 — EXPLORE</span><div><h3>데이터 이해와 탐색</h3><p>데이터 구조 파악, 결측치와 이상치 확인, 탐색적 데이터 분석</p></div></article>
+<article class="tile reveal"><span class="num">02 — EXPLAIN</span><div><h3>통계와 시각화</h3><p>기초 통계 분석, 변수 간 관계 탐색, 그래프로 패턴 표현</p></div></article>
+<article class="tile reveal"><span class="num">03 — PREDICT</span><div><h3>모델링 기초</h3><p>분석 목적에 맞는 방법 선택, 기초 머신러닝과 결과 해석</p></div></article>
+</div>
+<div class="band reveal"><p>하나의 정답을 외우기보다, <strong>데이터에 맞는 방법을 선택하는 힘</strong>을 기르고 있습니다.</p><small>Learning by doing · Exploring across domains</small></div>
+</section>
+<section id="approach">
+<div class="section-head reveal"><div><div class="eyebrow">03 / My approach</div><h2>분석의 과정을<br>소중하게.</h2></div><p class="section-copy">문제를 정의하고, 데이터를 정리하고, 적절한 방법을 적용한 뒤 결과를 검토합니다. 작은 선택 하나에도 이유를 남기는 분석가가 되고 싶습니다.</p></div>
+<div class="method">
+<article class="reveal"><h3>01. 질문부터 시작</h3><p>무엇을 알고 싶은지 구체화하고 분석의 목적과 기준을 세웁니다.</p></article>
+<article class="reveal"><h3>02. 데이터를 살펴보기</h3><p>수집된 데이터의 품질과 특성을 확인하고 분석 가능한 형태로 정리합니다.</p></article>
+<article class="reveal"><h3>03. 방법을 선택하기</h3><p>문제와 데이터에 맞춰 통계적 접근, 시각화, 모델링을 활용합니다.</p></article>
+<article class="reveal"><h3>04. 결과를 설명하기</h3><p>결과의 의미와 한계를 함께 살피고 핵심을 명료하게 전달합니다.</p></article>
+</div>
+<div class="stack reveal"><span class="pill">Python</span><span class="pill">Data Cleaning</span><span class="pill">EDA</span><span class="pill">Statistics</span><span class="pill">Visualization</span><span class="pill">Machine Learning Basics</span></div>
+</section>
+</main>
+<footer><div class="foot"><div><div class="eyebrow">The next question</div><h2>계속 배우고,<br>더 잘 해석하기.</h2></div><div><p>가다혜 · Data Analyst in progress</p><p>Made with curiosity and consistency.</p></div></div></footer>
+</div>
+<script>
+const items=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+ const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');observer.unobserve(entry.target)}}),{threshold:.12});
+ items.forEach(item=>observer.observe(item));
+}else{items.forEach(item=>item.classList.add('show'))}
+</script>
+</body>
+</html>
